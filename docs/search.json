@@ -1,0 +1,569 @@
+[
+  {
+    "objectID": "GIS_as_research_method.html#talk-overview",
+    "href": "GIS_as_research_method.html#talk-overview",
+    "title": "GIS as a research method",
+    "section": "Talk overview",
+    "text": "Talk overview\n\n1. What is spatial data\n\nDifference to “normal” data\nSpatial data formats\nRepresentation\n\n\n2. What is a GIS\n\nData to wisdom\nGI systems\n\n\n\n3. GIS as a research method\n\nHow to lie with maps (and data)\nPoint patterns\nAutocorrelation\nSpatial modelling\nNetworks\nEarth observation"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#who-am-i",
+    "href": "GIS_as_research_method.html#who-am-i",
+    "title": "GIS as a research method",
+    "section": "Who am i",
+    "text": "Who am i\n\n\n\nAssociate Professor in Spatial Data Science and Visualization at CASA, UCL\nLead MSc modules in:\n\nGeographic information systems and science\nRemotely sensing cities and environments\n\nResearch:\n\nApplications of data for city decisions / sustainability\nBig data for allocating funding"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#what-is-spatial-data",
+    "href": "GIS_as_research_method.html#what-is-spatial-data",
+    "title": "GIS as a research method",
+    "section": "What is spatial data?",
+    "text": "What is spatial data?\n\nSpatial data is just like normal data except it has an extra “geometry column” often referred to as “geom”"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#spatial-data",
+    "href": "GIS_as_research_method.html#spatial-data",
+    "title": "GIS as a research method",
+    "section": "Spatial data",
+    "text": "Spatial data\n\nSpatial data is typically an empty shape or object:\n\nGrid cells / hexagons\nPolygons\nLines\nPoints (e.g. restaurants)\n\n\nThe magic happens when we join non spatial data to spatial data"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#if-someone-gives-you-some-spatial-data-what-is-the-first-thing-you-might",
+    "href": "GIS_as_research_method.html#if-someone-gives-you-some-spatial-data-what-is-the-first-thing-you-might",
+    "title": "GIS as a research method",
+    "section": "If someone gives you some (spatial) data, what is the first thing you might …",
+    "text": "If someone gives you some (spatial) data, what is the first thing you might …\ne.g. here is an excel file that has data on:\n\nBMI\nsteps taken per day\nlocation"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#plot-it",
+    "href": "GIS_as_research_method.html#plot-it",
+    "title": "GIS as a research method",
+    "section": "Plot it!",
+    "text": "Plot it!\n\n“While we teach our students the benefits of visualization, answering the specific hypothesis-driven questions did not require plotting the data. We found that very often, the students driven by specific hypotheses skipped this simple step towards a broader exploration of the data. In fact, overall, students without a specific hypothesis were almost five times more likely to discover the gorilla when analyzing this dataset”\n\n\n Yanai and Lercher (2020)"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#types-of-spatial-data-raster-grid-vs-vector",
+    "href": "GIS_as_research_method.html#types-of-spatial-data-raster-grid-vs-vector",
+    "title": "GIS as a research method",
+    "section": "Types of spatial data: raster (‘grid’) Vs vector",
+    "text": "Types of spatial data: raster (‘grid’) Vs vector"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#section",
+    "href": "GIS_as_research_method.html#section",
+    "title": "GIS as a research method",
+    "section": "",
+    "text": "Vector\n\n\n\n\n\n\n\nRaster"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#features---vector-data",
+    "href": "GIS_as_research_method.html#features---vector-data",
+    "title": "GIS as a research method",
+    "section": "Features - vector data",
+    "text": "Features - vector data\nEach column also has a data type\n\nText\nNumeric?"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#representing-the-world",
+    "href": "GIS_as_research_method.html#representing-the-world",
+    "title": "GIS as a research method",
+    "section": "Representing the World",
+    "text": "Representing the World\n\n\n\nThe earth is a 3D sphere (well, almost). It’s wider than it is tall\nIn order to locate a point on the surface of a sphere, we need a set of coordinates\nCoordinates will tell us how near to the top or bottom of the sphere we are, or how far around\nBut where do we start?"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#representing-the-world-1",
+    "href": "GIS_as_research_method.html#representing-the-world-1",
+    "title": "GIS as a research method",
+    "section": "Representing the World",
+    "text": "Representing the World\n\n\nGeographic Coordinate Reference System\n\ntreats the globe as if it was a sphere divided into 360 equal parts called degrees\n\n\nProjected Coordinate Reference System\n\nflat, two-dimensional plane (through projecting a spheroid onto a 2D surface) giving it constant lengths, angles and areas\n\n\n\n\n\n\n\n\n\n\nCoordiante reference systems"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#representing-the-world-2",
+    "href": "GIS_as_research_method.html#representing-the-world-2",
+    "title": "GIS as a research method",
+    "section": "Representing the World",
+    "text": "Representing the World\nWhat is wrong with this map?"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#can-you-make-an-accurate-map",
+    "href": "GIS_as_research_method.html#can-you-make-an-accurate-map",
+    "title": "GIS as a research method",
+    "section": "Can you make an accurate map",
+    "text": "Can you make an accurate map"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#representing-the-world-3",
+    "href": "GIS_as_research_method.html#representing-the-world-3",
+    "title": "GIS as a research method",
+    "section": "Representing the World",
+    "text": "Representing the World\n\nMercator:\n\nEuropean imperialist attitude\nSize = POWER, ethnic bias\nAre you a sailor?\n\nGall-Peters projection:\n\nRight size of countries\n\nSouth UP?\n\nTop = important\nFirst known map 1154 Arab geographer Muhammad al-Idrisi"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#what-is-a-gis",
+    "href": "GIS_as_research_method.html#what-is-a-gis",
+    "title": "GIS as a research method",
+    "section": "What is a GIS",
+    "text": "What is a GIS\nWe need to separate Geographic Information / Spatial Data SCIENCE from the tools we use to carry it out:\n\nGI / SD Science is facilitated by the information systems (technologies – hardware, software + human interaction) we use to:\n\nStore (input)\nManipulate / Process\nDistribute\nAnalyse\nRetrieve (output)\nData / Information"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#we-do-gi-science-on-the-gi-systems",
+    "href": "GIS_as_research_method.html#we-do-gi-science-on-the-gi-systems",
+    "title": "GIS as a research method",
+    "section": "We do GI Science on the GI Systems",
+    "text": "We do GI Science on the GI Systems"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#data-vs-information",
+    "href": "GIS_as_research_method.html#data-vs-information",
+    "title": "GIS as a research method",
+    "section": "Data vs information",
+    "text": "Data vs information"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#the-canada-gis",
+    "href": "GIS_as_research_method.html#the-canada-gis",
+    "title": "GIS as a research method",
+    "section": "The Canada GIS",
+    "text": "The Canada GIS\nDeveloped by Roger Tomlinson at UCL in 1970s"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#esri",
+    "href": "GIS_as_research_method.html#esri",
+    "title": "GIS as a research method",
+    "section": "ESRI",
+    "text": "ESRI\n\nFrom 1982, ESRI cornered the GIS market in terms of data storage, tools for Query /Processing / Manipulation / Analysis and Display / Visualisation\nThe Graphical User Interface – GUI – allowed non-specialists to carry out GI Science for the first time"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#qgis-quantum-gis",
+    "href": "GIS_as_research_method.html#qgis-quantum-gis",
+    "title": "GIS as a research method",
+    "section": "QGIS (Quantum GIS)",
+    "text": "QGIS (Quantum GIS)\n\n\nUnder development since 2002\nFree & Open Source – everything is on github!\nProbably best GUI GIS aside from Arc\nConnects to PostGIS database very effectively\nSlick maps with nice default features\nLarge library of plugins for analysis"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#programming-gis",
+    "href": "GIS_as_research_method.html#programming-gis",
+    "title": "GIS as a research method",
+    "section": "Programming + GIS",
+    "text": "Programming + GIS\n\n“Everyone does need to learn to code. It is no longer sufficient for a GI Scientists to just work with a standard GIS interface: menus, buttons and black boxes. ” Brunsdon and Comber (2020)\n\nComparison of 4 GWR approaches all produced the same result except the method in ArcGIS from ESRI who didn’t reveal the code."
+  },
+  {
+    "objectID": "GIS_as_research_method.html#r-pthyon",
+    "href": "GIS_as_research_method.html#r-pthyon",
+    "title": "GIS as a research method",
+    "section": "R + Pthyon",
+    "text": "R + Pthyon\n\n\nData management/ storage facilitated through connection to a range of file formats (almost any you can think of)\nPlus a huge host of software packages for reading, writing and converting data held within these files into a format R can handle"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#r-pthyon-1",
+    "href": "GIS_as_research_method.html#r-pthyon-1",
+    "title": "GIS as a research method",
+    "section": "R + Pthyon",
+    "text": "R + Pthyon"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#how-to-lie-manipulate-maps-and-outcomes",
+    "href": "GIS_as_research_method.html#how-to-lie-manipulate-maps-and-outcomes",
+    "title": "GIS as a research method",
+    "section": "How to lie/ manipulate maps and outcomes",
+    "text": "How to lie/ manipulate maps and outcomes"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#what-is-wrong-with-this",
+    "href": "GIS_as_research_method.html#what-is-wrong-with-this",
+    "title": "GIS as a research method",
+    "section": "What is wrong with this?",
+    "text": "What is wrong with this?"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#what-is-wrong-with-this-1",
+    "href": "GIS_as_research_method.html#what-is-wrong-with-this-1",
+    "title": "GIS as a research method",
+    "section": "What is wrong with this?",
+    "text": "What is wrong with this?"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#issues",
+    "href": "GIS_as_research_method.html#issues",
+    "title": "GIS as a research method",
+    "section": "Issues",
+    "text": "Issues\n\nPolygon size does not equal population\nDid all the people in each county vote for 1 party? NO.\n\nElectoral college\n\nEach state gets three votes\nRemaining divided by population\nBONUS to smaller states\n1 vote in Wyoming = 193,000 people\n1 vote in California = over 700,000 people\n\nDemocrats got more votes, but lost"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#a-people-based-map",
+    "href": "GIS_as_research_method.html#a-people-based-map",
+    "title": "GIS as a research method",
+    "section": "A people based map?",
+    "text": "A people based map?"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#who-has-made-our-boundary-data",
+    "href": "GIS_as_research_method.html#who-has-made-our-boundary-data",
+    "title": "GIS as a research method",
+    "section": "Who has made our boundary data?",
+    "text": "Who has made our boundary data?"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#who-has-made-manipulated-our-boundary-data",
+    "href": "GIS_as_research_method.html#who-has-made-manipulated-our-boundary-data",
+    "title": "GIS as a research method",
+    "section": "Who has made manipulated our boundary data?",
+    "text": "Who has made manipulated our boundary data?"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#who-has-made-our-boundary-data-1",
+    "href": "GIS_as_research_method.html#who-has-made-our-boundary-data-1",
+    "title": "GIS as a research method",
+    "section": "Who has made our boundary data?",
+    "text": "Who has made our boundary data?\nRedlining\n\n\n\n1930s – American Home Owner’s Loan Corporation – prevent missed payments…residential security maps based on race\n\nPeople abandon areas\nCan’t refinance\nLess property tax for services\nSocial equity issues remain\n1968 Fair Housing Act\n\n\n\n\n\n\nLos Angeles Redlining"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#who-has-made-our-boundary-data-2",
+    "href": "GIS_as_research_method.html#who-has-made-our-boundary-data-2",
+    "title": "GIS as a research method",
+    "section": "Who has made our boundary data?",
+    "text": "Who has made our boundary data?\nGerrymandering\n\n\nEvery 10 years electoral districts are re-drawn “redistricting”– Thomas Hofeller (republican) = PACK and CRACK\n\nPACK = put all the democrat voters in 1 district\nCRACK = sprinkle them out so they never have majority\n\n\n\n\n\nGerrymandering"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#section-2",
+    "href": "GIS_as_research_method.html#section-2",
+    "title": "GIS as a research method",
+    "section": "",
+    "text": "“Redistricting is democracy at work” - Tom Hofeller"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#urban-systems-science",
+    "href": "GIS_as_research_method.html#urban-systems-science",
+    "title": "GIS as a research method",
+    "section": "Urban systems science",
+    "text": "Urban systems science"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#urban-systems-science-1",
+    "href": "GIS_as_research_method.html#urban-systems-science-1",
+    "title": "GIS as a research method",
+    "section": "Urban systems science",
+    "text": "Urban systems science\n \nUrban Systems: Cities [or functions within cities] that can be considered linked together [there is a relationship between them]\n\n\n+"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#urban-systems-science-2",
+    "href": "GIS_as_research_method.html#urban-systems-science-2",
+    "title": "GIS as a research method",
+    "section": "Urban systems science",
+    "text": "Urban systems science\n \nUrban Systems: Cities [or functions within cities] that can be considered linked together [there is a relationship between them]\n\n\n+\n\n\n \nUrban Science: Urban issues and problems"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#urban-systems-science-3",
+    "href": "GIS_as_research_method.html#urban-systems-science-3",
+    "title": "GIS as a research method",
+    "section": "Urban systems science",
+    "text": "Urban systems science\n \nUrban Systems: Cities [or functions within cities] that can be considered linked together [there is a relationship between them]\n\n\n+\n\n\n \nUrban Science: Urban issues and problems\n\n\n=\n\n\n \nSmart Cities: networks and services are made more efficient with the use of digital solutions for the benefit of its inhabitants and business.\n\nSource: Smart Cities, European Comission"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#how-smart-are-cities",
+    "href": "GIS_as_research_method.html#how-smart-are-cities",
+    "title": "GIS as a research method",
+    "section": "How smart are cities?",
+    "text": "How smart are cities?"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#vague-concepts",
+    "href": "GIS_as_research_method.html#vague-concepts",
+    "title": "GIS as a research method",
+    "section": "Vague concepts?",
+    "text": "Vague concepts?\nWhat is a forest? Conceptual vagueness of geographic concepts. Bennett(2001)"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#problematic",
+    "href": "GIS_as_research_method.html#problematic",
+    "title": "GIS as a research method",
+    "section": "Problematic",
+    "text": "Problematic"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#gis-methods-let-us-answer-the-question-where-is-my-phenomona-occuring-and-is-it-random-or-related-to-another-variable",
+    "href": "GIS_as_research_method.html#gis-methods-let-us-answer-the-question-where-is-my-phenomona-occuring-and-is-it-random-or-related-to-another-variable",
+    "title": "GIS as a research method",
+    "section": "GIS methods let us answer the question “where” is my phenomona occuring and is it random or related to another variable",
+    "text": "GIS methods let us answer the question “where” is my phenomona occuring and is it random or related to another variable"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#point-continuous-data",
+    "href": "GIS_as_research_method.html#point-continuous-data",
+    "title": "GIS as a research method",
+    "section": "Point / continuous data",
+    "text": "Point / continuous data\nQuestions we can ask / set\n\nPoints\nAre these points distributed in a random way or is there some sort of pattern (uniform or clustered)?\n\nWe should expect randomness but randomness conforms to known probability distributions\n\n\nSpatially continuous observations (e.g. values of polygons)\nHow (dis)similar are our values assigned to geographic units across geographic space"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#what-patterns-show",
+    "href": "GIS_as_research_method.html#what-patterns-show",
+    "title": "GIS as a research method",
+    "section": "What patterns show",
+    "text": "What patterns show\n\n\n\n\n\n\nSomething in the water: the mythology of Snow’s map of cholera. Source:Kenneth Field"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#spatial-epidemiology-lung-cancer",
+    "href": "GIS_as_research_method.html#spatial-epidemiology-lung-cancer",
+    "title": "GIS as a research method",
+    "section": "Spatial Epidemiology: Lung Cancer",
+    "text": "Spatial Epidemiology: Lung Cancer\n\n\n\n\n\n\n\n\n\nSimilar methods that we will use today - incidences of lung cancer relative to the physical envrionment - are they clustered and where?…leads to why\nare the locations of lung cancer similar?\nDoes the incinerator have any influence ?"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#spatial-epidemiology-mortality",
+    "href": "GIS_as_research_method.html#spatial-epidemiology-mortality",
+    "title": "GIS as a research method",
+    "section": "Spatial Epidemiology: Mortality",
+    "text": "Spatial Epidemiology: Mortality\n\nSimilar values might suggest there is something more going on\nSome sort of spatial influence\nNote the difference between spatially continuous and point data"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#quantifying-spatial-patterns",
+    "href": "GIS_as_research_method.html#quantifying-spatial-patterns",
+    "title": "GIS as a research method",
+    "section": "Quantifying Spatial Patterns",
+    "text": "Quantifying Spatial Patterns\n\nWhat is fixed?\n\n\nPoint Pattern Analysis\n\nProperties are fixed (e.g. binary - present or not)\nDiscrete objects - present or not, binary, yes or no.\nExamples: fly tipping, stop and search, blue plaques, pharmacies\n\nProperties fixed, but space (location - x,y) can vary\n\n\nSpatial Autocorrelation\n\nSpace (e.g. the location of the spatial units - wards, boroughs etc) is fixed\nThe values of the spatial units vary\nWhere the values are similar we say they exhibit Spatial Autocorrelation\n\nSpace is fixed, but properties (values) can vary"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#examples",
+    "href": "GIS_as_research_method.html#examples",
+    "title": "GIS as a research method",
+    "section": "Examples",
+    "text": "Examples\n\nQuestion: Are the points clustered or are they random?\nIf we identify clusters what are the socio-economic characteristics ?"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#examples-1",
+    "href": "GIS_as_research_method.html#examples-1",
+    "title": "GIS as a research method",
+    "section": "Examples",
+    "text": "Examples\n\nQuestion: Are the values similar between certain wards?"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#spatial-modelling",
+    "href": "GIS_as_research_method.html#spatial-modelling",
+    "title": "GIS as a research method",
+    "section": "Spatial modelling",
+    "text": "Spatial modelling\n\nWhat are the factors that might lead to variation in Average GCSE point scores across the city?\n\n\n\n\n\n\n\n\nDependent variable labelled y\nResiduals are the dots not on line\n\\(y_i = \\beta_0 + \\beta_1x_i + \\epsilon_i\\)\n\n\n\n\n\\(\\beta_0\\) is the intercept (the value of \\(y\\) when \\(x = 0\\) - somewhere around 370 on the graph above);\n\\(\\beta_1\\) is sometimes referred to as the ‘slope’ parameter and is simply the change in the value of \\(y\\) for a 1 unit change in the value of \\(x\\) (the slope of the blue line) - around -40.\n\\(\\epsilon_i\\) is a random error term sums 0 - add all of the vertical differences between the blue line and all of the residuals"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#spatial-regression",
+    "href": "GIS_as_research_method.html#spatial-regression",
+    "title": "GIS as a research method",
+    "section": "Spatial regression",
+    "text": "Spatial regression\n\nHere we haven’t accounted for the influence of a neighbour…\nIn our model the residuals (observed-predicted) should show no pattern (or autocorrleation)…in other words they should be random!"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#spatial-regression-1",
+    "href": "GIS_as_research_method.html#spatial-regression-1",
+    "title": "GIS as a research method",
+    "section": "Spatial regression",
+    "text": "Spatial regression\n\nAt this point we have several options\n\nGlobal - single regression models\n\nlag model - we can include the value of neighboring GCSE values in the model\nerror model - we treat the errors as a nuisance but we must account for them.\n\nLocal model\n\nGeographically weighted regression - we do lots of local regression models and get coefficients that vary over the study area.\nMachine Learning versions = geographically weighted random forests…"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#networks-location-allocation",
+    "href": "GIS_as_research_method.html#networks-location-allocation",
+    "title": "GIS as a research method",
+    "section": "Networks / location allocation",
+    "text": "Networks / location allocation\nQuestion: You are in charge of a supermarket chain and you want to open a new store\nQuestion: You work for a delivery company and want to locate a warehouse\nQuestion: In the event of an emergency call, where is the nearest fire station / ambulance / police car?"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#networks-location-allocation-1",
+    "href": "GIS_as_research_method.html#networks-location-allocation-1",
+    "title": "GIS as a research method",
+    "section": "Networks / location allocation",
+    "text": "Networks / location allocation\nInputs:\n\nStreet network (info on roads, speeds, turn restrictions)\n\nOpen Street Map (free, Volunteered Geographic Information data)\nOrdnance Survey Master Map (UK national mapping agency)\n\nDemand points\n\nOften where people live (e.g. houses or census data)\n\nFacilities\n\nThe resource (e.g. fire station, hospital)"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#solver-type",
+    "href": "GIS_as_research_method.html#solver-type",
+    "title": "GIS as a research method",
+    "section": "Solver type…",
+    "text": "Solver type…\nWhat are you solving for?\n\nMinimize Impedance: locate warehouses, because it can reduce the overall transportation costs of delivering goods to outlets\nMaximize Coverage: fire stations - must arrive to demand point within response time\nMaximize Capacitated Coverage: hospitals - serve demand without going over capacity"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#greathowever",
+    "href": "GIS_as_research_method.html#greathowever",
+    "title": "GIS as a research method",
+    "section": "Great…however…",
+    "text": "Great…however…\nfood deserts’ where people are likely to pay a higher cost for their weekly food shopping and have to shop in more expensive small convenience stores with a limited stock of good value fresh products.\n\n\n\n\n\n\nThe E-food Desert Index (EFDI) is a composite index which measures accessibility to groceries. Source:Trust for London"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#more-poweful-analysis",
+    "href": "GIS_as_research_method.html#more-poweful-analysis",
+    "title": "GIS as a research method",
+    "section": "More poweful analysis",
+    "text": "More poweful analysis\nInstead of just using the network we can now combine public transport, elevation, use timetables and set parameters such as maximum waiting time using R5R\n\n\n\n\n\n\nR5R example. Source:Duncan Smith"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#cost-distance-analysis",
+    "href": "GIS_as_research_method.html#cost-distance-analysis",
+    "title": "GIS as a research method",
+    "section": "Cost distance analysis",
+    "text": "Cost distance analysis\nNot all countries (e.g. developing countries) will have data on transport, networks and facilities.\nQuestion: The World Bank wanted to determine how many people in rural Tanzania had access to a water point within 30 minutes.\nData:\n\nLandcover from Global Human Settlement\nWater points from World Bank\nFriction surface from Malaria Atlas (the cost to travel across the cell)\n100m population data from World Pop\nTanzania outline from GADM"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#cost-distance-analysis-1",
+    "href": "GIS_as_research_method.html#cost-distance-analysis-1",
+    "title": "GIS as a research method",
+    "section": "Cost distance analysis",
+    "text": "Cost distance analysis"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#earth-observation",
+    "href": "GIS_as_research_method.html#earth-observation",
+    "title": "GIS as a research method",
+    "section": "Earth Observation",
+    "text": "Earth Observation\nFremantle Woolstore, Western Australia"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#an-example.uhi",
+    "href": "GIS_as_research_method.html#an-example.uhi",
+    "title": "GIS as a research method",
+    "section": "An example….UHI",
+    "text": "An example….UHI"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#data",
+    "href": "GIS_as_research_method.html#data",
+    "title": "GIS as a research method",
+    "section": "Data",
+    "text": "Data"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#models",
+    "href": "GIS_as_research_method.html#models",
+    "title": "GIS as a research method",
+    "section": "Models",
+    "text": "Models"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#scenarios",
+    "href": "GIS_as_research_method.html#scenarios",
+    "title": "GIS as a research method",
+    "section": "Scenarios",
+    "text": "Scenarios\nRan 4 scenarios:\n\n\n\nOriginal (existing) development (from satellite imagery)\nProposed redevelopment as in the plan\nProposed redevelopment removing trees\nProposed redevelopment with trees covering the hottest pixels"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#policy",
+    "href": "GIS_as_research_method.html#policy",
+    "title": "GIS as a research method",
+    "section": "Policy",
+    "text": "Policy"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#the-future-big-data",
+    "href": "GIS_as_research_method.html#the-future-big-data",
+    "title": "GIS as a research method",
+    "section": "The future: Big Data",
+    "text": "The future: Big Data"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#big-data",
+    "href": "GIS_as_research_method.html#big-data",
+    "title": "GIS as a research method",
+    "section": "Big data",
+    "text": "Big data\n\nBig geospatial data include datasets that are too large to be processed using traditional GIS tools\n\n\nSource: GIS Harvard"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#why-are-they-large",
+    "href": "GIS_as_research_method.html#why-are-they-large",
+    "title": "GIS as a research method",
+    "section": "Why are they large?",
+    "text": "Why are they large?\nRaster\n\nLandsat satellite data: 400 scenes of Earth a day, revising each location every 16 days\n\nEach scene is about 1GB\nWe’d used Google Earth Engine - not considered here\n\n\nVector\n\nNew York City Taxi and Limousine Commission (TLC) all records from Yellow and Green Cabs\n\n150GB, 1.2 billion records\n\nOpen Street Map\n\n1764.5GB when uncompressed"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#what-can-we-do-about-it",
+    "href": "GIS_as_research_method.html#what-can-we-do-about-it",
+    "title": "GIS as a research method",
+    "section": "What can we do about it?",
+    "text": "What can we do about it?\nParquet files\n\nWe are moving from row based storage to column based\nAbout 50x faster than a .csv\nIt groups our data.\n\nFor example a row group size of 2, puts rows all the data from 1 and 2 next to each other then we have 3! = GROUPS or PARTITION\nIf we have large data this means we can skip groups we don’t need"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#section-5",
+    "href": "GIS_as_research_method.html#section-5",
+    "title": "GIS as a research method",
+    "section": "",
+    "text": "Demystifying the Parquet File Format"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#section-6",
+    "href": "GIS_as_research_method.html#section-6",
+    "title": "GIS as a research method",
+    "section": "",
+    "text": "New York City Taxi and Limousine Commission (TLC) all records from Yellow and Green Cabs"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#concepts",
+    "href": "GIS_as_research_method.html#concepts",
+    "title": "GIS as a research method",
+    "section": "Concepts",
+    "text": "Concepts\n\nYou may come across Arrow - this is an in-memory format, Parquet is a storage format\n\n \n\nIn the R for Data Science book a 9BG .csv is queried in\n\n11 seconds for standard code\n0.063 seconds using a parquet file! 100x faster"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#we-can-go-faster",
+    "href": "GIS_as_research_method.html#we-can-go-faster",
+    "title": "GIS as a research method",
+    "section": "We can go faster!",
+    "text": "We can go faster!"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#duckdb",
+    "href": "GIS_as_research_method.html#duckdb",
+    "title": "GIS as a research method",
+    "section": "DuckDB",
+    "text": "DuckDB\n\nDatabase management system\nColumnar data\nNo installation\nConvert our Parquet file to DuckDB and back again!\n\n\nto_duckdb() \nto_arrow()\n\n\nRegarding performance, parquet is 717 times faster than the same query on a csv file, and duckdb is 2808 times faster.\n\n\nSource: Christophe Nicault"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#notes",
+    "href": "GIS_as_research_method.html#notes",
+    "title": "GIS as a research method",
+    "section": "Notes",
+    "text": "Notes\n\nAll (parquet and DuckDB) make sure of dplyr ! select(), filter(), groupby() = direct integration with R\nCurrently the support for spatial data is very limited\nsfarrow - can load and query the data but can’t do any analysis!"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#postgres",
+    "href": "GIS_as_research_method.html#postgres",
+    "title": "GIS as a research method",
+    "section": "Postgres",
+    "text": "Postgres"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#postgres-object-relational-database",
+    "href": "GIS_as_research_method.html#postgres-object-relational-database",
+    "title": "GIS as a research method",
+    "section": "Postgres = object-relational database",
+    "text": "Postgres = object-relational database\n\n\n\nDVD Rental Model"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#postgresql-has-a-postgis-extention",
+    "href": "GIS_as_research_method.html#postgresql-has-a-postgis-extention",
+    "title": "GIS as a research method",
+    "section": "PostgreSQL has a PostGIS extention",
+    "text": "PostgreSQL has a PostGIS extention"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#this-allows-the-geometry-column-and-spatial-quieres",
+    "href": "GIS_as_research_method.html#this-allows-the-geometry-column-and-spatial-quieres",
+    "title": "GIS as a research method",
+    "section": "This allows the “geometry” column and spatial quieres",
+    "text": "This allows the “geometry” column and spatial quieres\nMaking random points in polygons\n\n\n\n\n\n5 million random points\n\nQGIS = 226 seconds\nPostGIS = 18 seconds\n\n\nSource: Why should you care about PostGIS? — A gentle introduction to spatial databases"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#postgis",
+    "href": "GIS_as_research_method.html#postgis",
+    "title": "GIS as a research method",
+    "section": "PostGIS",
+    "text": "PostGIS"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#starting",
+    "href": "GIS_as_research_method.html#starting",
+    "title": "GIS as a research method",
+    "section": "Starting",
+    "text": "Starting\n\nDespite all these tools we must start with the basics.\nOften this is in Quantum GIS (free) or ArcMap($)"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#conclusion",
+    "href": "GIS_as_research_method.html#conclusion",
+    "title": "GIS as a research method",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nIt is essential to use data to inform decisions…BUT we must develop a critical awareness of:\n\nHow the data has been created\nHow the boundary data has been created\nWhat the agenda was for collecting the data\n\nAlmost any data can be spatial\nWe must recognize that:\n\nData is a snapshot / sample of the population\nAnalysis attempts to model the world - it is never perfect.\n\n\n\nScientists must have a say in the future of cities, McPhearson 2016\n\n\n\n\nGIS as a research method • Andy MacLachlan"
+  }
+]

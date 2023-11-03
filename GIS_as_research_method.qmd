@@ -1,0 +1,936 @@
+---
+format: 
+    revealjs:
+      auto-stretch: false
+      include-in-header: [assets/header.html]
+      chalkboard: true
+      slide-number: c/t
+  #    width: 1600
+  #    height: 900
+      footer: "GIS as a research method • Andy MacLachlan"
+      highlight-style: github
+      code-copy: true
+      code-line-numbers: true
+      controls: true
+  #    css: ["theme/theme.css"]
+      theme: [moon, slides.scss]
+      echo: true
+title: "GIS as a research method"
+#subtitle: Slides with revealjs
+author: <a href="https://www.ucl.ac.uk/bartlett/casa/people/dr-andrew-maclachlan">Andy MacLachlan</a><br> The Barlett Centre for Advanced Spatial Analysis, UCL <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /><div class="container">
+  <span><a href="https://twitter.com/andymaclachlan"><i class="fab fa-twitter"></i> andymaclachlan</a></span><br><br>
+  <span><a href="https://github.com/andrewmaclachlan?tab=repositories"><i class="fab fa-github"></i> andrewmaclachlan</a></span> <br><br>
+  <span><a href="mailto:a.maclachlan@ucl.ac.uk"><i class="fa fa-envelope"></i> a.maclachlan@ucl.ac.uk</a></span>
+title-slide-attributes:
+  data-background-image: "img/CASA_Logo_no_text.png"
+  data-background-size: cover
+  data-background-position: center
+  data-background-opacity: '0.17'
+logo: "img/CASA_logo.png"
+---
+
+## Talk overview
+
+::: {.column width="49%"}
+**1. What is spatial data**
+
+-   Difference to "normal" data
+
+-   Spatial data formats
+
+-   Representation
+
+<br/>
+
+**2. What is a GIS**
+
+-   Data to wisdom
+
+-   GI systems
+:::
+
+::: {.column width="49%"}
+**3. GIS as a research method**
+
+-   How to lie with maps (and data)
+
+-   Point patterns
+
+-   Autocorrelation
+
+-   Spatial modelling
+
+-   Networks
+
+-   Earth observation
+:::
+
+## Who am i
+
+::: columns
+::: {.column width="50%"}
+-   Associate Professor in Spatial Data Science and Visualization at CASA, UCL
+
+-   Lead MSc modules in:
+
+    -   [Geographic information systems and science](https://andrewmaclachlan.github.io/CASA0005repo/)
+    -   [Remotely sensing cities and environments](https://andrewmaclachlan.github.io/CASA0023/)
+
+-   Research:
+
+    -   [Applications of data for city decisions / sustainability](https://scholar.google.co.uk/citations?user=wLrJwyQAAAAJ&hl=en&oi=sra)
+
+    -   Big data for allocating funding
+:::
+
+::: {.column width="50%"}
+```{=html}
+<center><iframe width="500" height="350" src="https://andrewmaclachlan.github.io/CASA0023/" title="Quarto Documentation"></iframe></center>
+```
+:::
+:::
+
+## What is spatial data?
+
+> Spatial data is just like normal data except it has an extra "geometry column" often referred to as "geom"
+
+![](img/geometry_col.png){fig-align="center" width="75%"}
+
+## Spatial data
+
+::: {.column width="49%"}
+Spatial data is typically an empty shape or object:
+
+-   Grid cells / hexagons
+-   Polygons
+-   Lines
+-   Points (e.g. restaurants)
+
+</br>
+
+The magic happens when we join non spatial data to spatial data
+:::
+
+::: {.column width="49%"}
+![](img/spatial_data.png){fig-align="center" width="75%"}
+
+![](img/spatial_data_2.png){fig-align="center" width="75%"}
+:::
+
+## If someone gives you some (spatial) data, what is the first thing you might ... {.center}
+
+e.g. here is an excel file that has data on:
+
+-   BMI
+-   steps taken per day
+-   location
+
+## Plot it!
+
+::: {.column width="49%"}
+"While we teach our students the benefits of visualization, answering the specific hypothesis-driven questions did not require plotting the data. We found that very often, the students driven by specific hypotheses skipped this simple step towards a broader exploration of the data. In fact, overall, **students without a specific hypothesis were almost five times more likely to discover the gorilla when analyzing this dataset"**
+:::
+
+::: {.column width="49%"}
+![](img/gorilla.png){fig-align="center" width="100%"} Yanai and Lercher (2020)
+:::
+
+## Types of spatial data: raster ('grid') Vs vector
+
+![](img/happy_valley.jpg){fig-align="center" width="40%"}
+
+## 
+
+::: {.column width="49%"}
+### Vector
+
+![](img/vector_casa.png){fig-align="center" width="45%"}
+:::
+
+::: {.column width="49%"}
+### Raster
+
+![](img/raster_dubai){fig-align="center" width="45%"}
+:::
+
+## Features - vector data
+
+Each column also has a data type
+
+-   Text
+-   Numeric?
+
+![](img/vector_attribute.png){fig-align="center" width="40%"}
+
+## Representing the World
+
+::: columns
+::: {.column width="49%"}
+-   The earth is a 3D sphere (well, almost). It's wider than it is tall
+-   In order to locate a point on the surface of a sphere, we need a set of coordinates
+-   Coordinates will tell us how near to the top or bottom of the sphere we are, or how far around
+-   But where do we start?
+:::
+
+::: {.column width="49%"}
+![](img/3d_globe.jpg){fig-align="center" width="548"}
+:::
+:::
+
+## Representing the World
+
+::: columns
+::: {.column width="49%"}
+**Geographic Coordinate Reference System**
+
+-   treats the globe as if it was a sphere divided into 360 equal parts called degrees
+
+<br/>
+
+**Projected Coordinate Reference System**
+
+-   flat, two-dimensional plane (through projecting a spheroid onto a 2D surface) giving it constant lengths, angles and areas
+:::
+
+::: {.column width="49%"}
+![](img/globe.png){fig-align="center" width="283"}
+
+![Coordiante reference systems](img/projected.png){fig-align="center" width="274"}
+:::
+:::
+
+## Representing the World
+
+### What is wrong with this map?
+
+![](img/mercator.jpg){fig-align="center" width="60%"}
+
+## Can you make an accurate map
+<br/>
+
+<p align="center">
+
+<iframe width="800" height="550" src="https://www.youtube.com/embed/8I_VpC6IuJs?si=TllX-Lak_RMM_D58" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+
+</iframe>
+
+</p>
+
+## Representing the World
+
+::: {.column width="49%"}
+**Mercator:**
+
+-   European imperialist attitude
+-   Size = POWER, ethnic bias
+-   Are you a sailor?
+
+**Gall-Peters projection:**
+
+-   Right size of countries
+
+**South UP?**
+
+-   Top = important
+-   First known map 1154 Arab geographer Muhammad al-Idrisi
+
+:::
+
+::: {.column width="49%"}
+![](img/gall-peters.jpg){fig-align="center" width="80%"}
+
+![](img/Muhammad_al-Idrisi.jpg){fig-align="center" width="80%"}
+:::
+
+## 
+
+![](img/flat_earth.png){fig-align="center" width="75%"}
+
+## What is a GIS
+
+We need to separate Geographic Information / Spatial Data SCIENCE from the tools we use to carry it out:
+
+</br>
+
+GI / SD Science is facilitated by the information systems (technologies -- hardware, software + human interaction) we use to:
+
+-   Store (input)
+-   Manipulate / Process
+-   Distribute
+-   Analyse
+-   Retrieve (output)
+-   Data / Information
+
+## We do GI Science on the GI Systems {.center}
+
+## Data vs information
+
+![](img/data_wisdom.png){fig-align="center" width="80%"}
+
+## The Canada GIS
+
+Developed by Roger Tomlinson at UCL in 1970s
+
+![](img/canada_GIS.png){fig-align="center" width="100%"}
+
+## ESRI
+
+-   From 1982, ESRI cornered the GIS market in terms of data storage, tools for Query /Processing / Manipulation / Analysis and Display / Visualisation
+
+-   The Graphical User Interface -- GUI -- allowed non-specialists to carry out GI Science for the first time
+
+![](img/ESRI.png){fig-align="center" width="70%"}
+
+## QGIS (Quantum GIS)
+
+::: {.column width="49%"}
+-   Under development since 2002
+-   Free & Open Source -- everything is on github!
+-   Probably best GUI GIS aside from Arc
+-   Connects to PostGIS database very effectively
+-   Slick maps with nice default features
+-   Large library of plugins for analysis
+:::
+
+::: {.column width="49%"}
+![](img/QGIS){fig-align="center" width="100%"}
+:::
+
+## Programming + GIS
+
+> "Everyone does need to learn to code. It is no longer sufficient for a GI Scientists to just work with a standard GIS interface: menus, buttons and black boxes. " Brunsdon and Comber (2020)
+
+Comparison of 4 GWR approaches all produced the same result except the method in ArcGIS from ESRI who didn't reveal the code.
+
+## R + Pthyon
+
+::: {.column width="49%"}
+-   Data management/ storage facilitated through connection to a range of file formats (almost any you can think of)
+
+-   Plus a huge host of software packages for reading, writing and converting data held within these files into a format R can handle
+:::
+
+::: {.column width="49%"}
+![](img/R_GIS.png){fig-align="center" width="80%"}
+:::
+
+## R + Pthyon
+
+![](img/rayshader.png){fig-align="center" width="90%"}
+
+## How to lie/ manipulate maps and outcomes {.center}
+
+## What is wrong with this?
+
+![](img/election.png){fig-align="center" width="70%"}
+
+
+
+## What is wrong with this?
+
+![](img/trump_result.jpg){fig-align="center" width="50%"}
+
+## Issues
+
+-   Polygon size does not equal population
+-   Did all the people in each county vote for 1 party? NO.
+
+Electoral college
+
+-   Each state gets three votes
+-   Remaining divided by population
+-   BONUS to smaller states
+-   1 vote in Wyoming = 193,000 people
+-   1 vote in California = over 700,000 people
+
+**Democrats got more votes, but lost**
+
+## A people based map?
+
+![](img/trump_cartogram.png){fig-align="center" width="75%"}
+
+
+
+## Who has made our *boundary* data? {.center}
+
+## Who has ~~made~~ manipulated our *boundary* data? {.center}
+
+## Who has made our *boundary* data?
+
+#### Redlining
+
+::: columns
+::: {.column width="49%"}
+-   1930s -- American Home Owner's Loan Corporation -- prevent missed payments...residential security maps **based on race**
+    -   People abandon areas
+    -   Can't refinance
+    -   Less property tax for services
+    -   Social equity issues remain
+    -   1968 Fair Housing Act
+:::
+
+::: {.column width="49%"}
+[![Los Angeles Redlining](img/LA_redline.png)](https://dsl.richmond.edu/panorama/redlining/#loc=5/39.1/-94.58&text=downloads)
+:::
+:::
+
+## Who has made our *boundary* data?
+
+#### Gerrymandering
+
+::: columns
+::: {.column width="49%"}
+Every 10 years electoral districts are re-drawn "redistricting"-- Thomas Hofeller (republican) = **PACK and CRACK**
+
+-   PACK = put all the democrat voters in 1 district
+-   CRACK = sprinkle them out so they never have majority
+:::
+
+::: {.column width="49%"}
+[![Gerrymandering](img/gerrymandering.png){fig-align="center" width="254"}](https://en.wikipedia.org/wiki/Gerrymandering)
+:::
+:::
+
+## 
+
+![](img/tom_hofeller.jpg){fig-align="center" width="359"}
+
+> "Redistricting is democracy at work" - Tom Hofeller
+
+![](img/hofeller_files.png){fig-align="center" width="335"}
+
+## 
+
+![](img/district12.png){fig-align="center"}
+
+
+
+## Urban systems science {auto-animate="true"}
+
+## Urban systems science {auto-animate="true"}
+
+<br/> <br/>
+
+**Urban Systems**: Cities \[or functions within cities\] that can be considered linked together \[there is a relationship between them\]
+
+::: {style="font-size: 150%;"}
+::: center-xy
+**+**
+:::
+:::
+
+## Urban systems science {auto-animate="true"}
+
+<br/> <br/>
+
+**Urban Systems**: Cities \[or functions within cities\] that can be considered linked together \[there is a relationship between them\]
+
+::: {style="font-size: 150%;"}
+::: center-xy
+**+**
+:::
+:::
+
+<br/> <br/>
+
+**Urban Science**: Urban issues and problems
+
+## Urban systems science {auto-animate="true"}
+
+<br/> <br/>
+
+**Urban Systems**: Cities \[or functions within cities\] that can be considered linked together \[there is a relationship between them\]
+
+::: {style="font-size: 150%;"}
+::: center-xy
+**+**
+:::
+:::
+
+<br/> <br/>
+
+**Urban Science**: Urban issues and problems
+
+::: {style="font-size: 150%;"}
+::: center-xy
+**=**
+:::
+:::
+
+<br/> <br/>
+
+**Smart Cities**: networks and services are made more efficient with the use of digital solutions for the benefit of its inhabitants and business.
+
+::: {style="font-size: 60%;"}
+Source: [Smart Cities, European Comission](https://commission.europa.eu/eu-regional-and-urban-development/topics/cities-and-urban-development/city-initiatives/smart-cities_en)
+:::
+
+## How smart are cities?
+
+<br/>
+
+<p align="center">
+
+<iframe width="800" height="550" src="https://www.youtube.com/embed/k5eL_al_m7Q?start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+
+</iframe>
+
+</p>
+
+## Vague concepts?
+
+What is a forest? Conceptual vagueness of geographic concepts. 
+Bennett(2001) 
+
+
+![](img/ABS.png){fig-align="center" width="50%"}
+
+##
+
+![](img/USA.png){fig-align="center" width="50%"}
+
+## Problematic 
+
+![](img/development_goals.png){fig-align="center" width="50%"}
+
+## GIS methods let us answer the question "where" is my phenomona occuring and is it random or related to another variable {.center}
+
+## Point / continuous data
+
+### Questions we can ask / set
+
+</br>
+
+#### Points
+
+
+Are these points distributed in a random way or is there some sort of pattern (uniform or clustered)?
+
+>   * We should expect randomness but randomness conforms to known probability distributions
+
+</br>
+
+
+#### Spatially continuous observations (e.g. values of polygons)
+
+How (dis)similar are our values assigned to geographic units across geographic space
+
+## What patterns show
+
+![](img/cholera.png){fig-align="center" width="60%"}
+
+
+::: {style="font-size: 60%;"}
+Something in the water: the mythology of Snow’s map of cholera. Source:[Kenneth Field](https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/something-in-the-water-the-mythology-of-snows-map-of-cholera/)
+:::
+
+## Spatial Epidemiology: Lung Cancer
+
+::: {.column width="49%"}
+
+![](img/Gatrell.png){fig-align="center" width="100%"}
+:::
+
+::: {.column width="49%"}
+
+
+* Similar methods that we will use today - incidences of lung cancer relative to the physical envrionment - are they clustered and where?...leads to why
+* are the locations of lung cancer similar?
+* Does the incinerator have any influence ?
+
+:::
+
+## Spatial Epidemiology: Mortality
+
+* Similar values might suggest there is something more going on
+* Some sort of spatial influence
+* Note the difference between spatially continuous and point data
+
+![](img/Lorant.png){fig-align="center" width="70%"}
+
+## Quantifying Spatial Patterns
+
+</br>
+
+What is fixed?
+
+</br>
+
+::: {.column width="49%"}
+
+### Point Pattern Analysis
+
+* Properties are fixed (e.g. binary - present or not)
+* Discrete objects - present or not, binary, yes or no.
+* Examples: fly tipping, stop and search, blue plaques, pharmacies 
+
+Properties fixed, but **space (location - x,y)** can vary
+:::
+
+::: {.column width="49%"}
+
+### Spatial Autocorrelation
+
+* Space (e.g. the location of the spatial units - wards, boroughs etc) is fixed
+* The values of the spatial units vary
+* Where the values are similar we say they exhibit Spatial Autocorrelation 
+
+Space is fixed, but **properties (values)** can vary
+:::
+
+## Examples
+
+* Question: Are the points clustered or are they random?
+
+* If we identify clusters what are the socio-economic characteristics ?
+
+![](img/pharmacies.png){fig-align="center" width="70%"}
+
+## Examples
+
+* Question: Are the values similar between certain wards?
+
+![](img/average_GCSE.png){fig-align="center" width="70%"}
+
+## Spatial modelling
+
+> What are the factors that might lead to variation in Average GCSE point scores across the city?
+
+::: {.column width="49%"}
+
+
+![](img/GCSE_absence.png){fig-align="center" width="100%"}
+
+* Dependent variable labelled y
+* Residuals are the dots not on line 
+* $y_i = \beta_0 + \beta_1x_i + \epsilon_i$
+
+:::
+
+::: {.column width="49%"}
+  
+* $\beta_0$ is the intercept (the value of $y$ when $x = 0$ - somewhere around 370 on the graph above); 
+
+* $\beta_1$ is sometimes referred to as the 'slope' parameter and is simply the change in the value of $y$ for a 1 unit change in the value of $x$ (the slope of the blue line) - around -40.
+
+* $\epsilon_i$ is a random error term sums 0 - add all of the vertical differences between the blue line and all of the residuals
+
+:::
+
+## Spatial regression
+
+* Here we haven't accounted for the influence of a neighbour...
+
+* In our model the residuals (observed-predicted) should show no pattern (or autocorrleation)...in other words they should be random!
+
+
+![](img/model_errors.png){fig-align="center" width="70%"}
+
+## Spatial regression
+
+* At this point we have several options
+
+**Global - single regression models**
+
+1. lag model - we can include the value of neighboring GCSE values in the model
+
+2. error model - we treat the errors as a nuisance but we must account for them.
+
+**Local model**
+
+3. Geographically weighted regression - we do lots of local regression models and get coefficients that vary over the study area.
+
+4. Machine Learning versions = geographically weighted random forests...
+
+## Networks / location allocation 
+
+Question: You are in charge of a supermarket chain and you want to open a new store
+
+Question: You work for a delivery company and want to locate a warehouse
+
+Question: In the event of an emergency call, where is the nearest fire station / ambulance / police car?
+
+![](img/location_allocation.png){fig-align="center" width="55%"}
+
+## Networks / location allocation 
+
+Inputs:
+
+* Street network (info on roads, speeds, turn restrictions)
+  * Open Street Map (free, Volunteered Geographic Information data)
+  * Ordnance Survey Master Map (UK national mapping agency)
+
+* Demand points
+  * Often where people live (e.g. houses or census data)
+
+* Facilities 
+  * The resource (e.g. fire station, hospital)
+  
+## Solver type...
+
+What are you solving for?
+
+* Minimize Impedance:  locate warehouses, because it can reduce the overall transportation costs of delivering goods to outlets
+
+* Maximize Coverage: fire stations - must arrive to demand point within response time
+
+* Maximize Capacitated Coverage: hospitals - serve demand without going over capacity
+
+## Great...however...
+
+food deserts’ where people are likely to pay a higher cost for their weekly food shopping and have to shop in more expensive small convenience stores with a limited stock of good value fresh products.
+
+![](img/access_to_groceries.png){fig-align="center" width="65%"}
+
+::: {style="font-size: 60%;"}
+The E-food Desert Index (EFDI) is a composite index which measures accessibility to groceries. Source:[Trust for London](https://trustforlondon.org.uk/data/e-food-desert-index/)
+:::
+
+## More poweful analysis 
+
+Instead of just using the network we can now combine public transport, elevation, use timetables and set parameters such as maximum waiting time using **R5R**
+
+
+![](img/londonse-kings-cross-hex.png){fig-align="center" width="50%"}
+
+::: {style="font-size: 60%;"}
+R5R example. Source:[Duncan Smith](https://citygeographics.org/r5r-workshop/)
+:::
+
+## Cost distance analysis
+
+Not all countries (e.g. developing countries) will have data on transport, networks and facilities.
+
+Question: The World Bank wanted to determine how many people in rural Tanzania had access to a water point within 30 minutes. 
+
+Data:
+
+* Landcover from Global Human Settlement
+* Water points from World Bank
+* Friction surface from Malaria Atlas (the cost to travel across the cell)
+* 100m population data from World Pop
+* Tanzania outline from GADM 
+
+## Cost distance analysis
+
+::: {.column width="49%"}
+
+![](img/cell_WP.png){fig-align="center" width="100%"}
+
+:::
+
+::: {.column width="49%"}
+
+![](img/LGA_WP.png){fig-align="center" width="75%"}
+:::
+
+
+## Earth Observation
+
+#### Fremantle Woolstore, Western Australia
+
+::: columns
+::: {.column width="49%"}
+![](img/woolstore.png){fig-align="center" width="381"}
+
+![](img/woolstore_2.png){fig-align="center" width="385"}
+:::
+
+::: {.column width="49%"}
+![](img/woolstore_3.png){fig-align="center" width="399"}
+:::
+:::
+
+## An example....UHI
+
+<br/>
+
+![](img/woolstore_plans.png){fig-align="center" width="75%"}
+
+## Data
+
+![](img/UHI_data.jpg){fig-align="center" width="75%"}
+
+
+## Models
+
+![](img/UHI_image_model.jpg){fig-align="center" width="60%"}
+
+
+## Scenarios
+
+Ran 4 scenarios:
+
+::: columns
+::: {.column width="49%"}
+1.  **Original** (existing) development (from satellite imagery)
+2.  Proposed redevelopment as in **the plan**
+3.  Proposed redevelopment **removing trees**
+4.  Proposed redevelopment with trees **covering the hottest pixels**
+:::
+
+::: {.column width="49%"}
+![](img/woolstore_analysis.png){fig-align="center" width="1000"}
+:::
+:::
+
+## Policy
+
+![](img/UHI_policy.jpg){fig-align="center" width="75%"}
+
+
+## The future: Big Data {.center}
+
+## Big data {.center}
+
+> Big geospatial data include datasets that are too large to be processed using **traditional GIS tools**
+
+::: {style="font-size: 60%;"}
+Source: [GIS Harvard](https://gis.harvard.edu/gis-data-science-big-data-workstream-cga)
+:::
+
+## Why are they large?
+
+**Raster**
+
+-   Landsat satellite data: 400 scenes of Earth a day, revising each location every 16 days
+
+    -   Each scene is about 1GB
+    -   We'd used Google Earth Engine - not considered here
+
+**Vector**
+
+-   New York City Taxi and Limousine Commission (TLC) all records from Yellow and Green Cabs
+
+    -   150GB, 1.2 billion records
+
+-   Open Street Map
+
+    -   1764.5GB when uncompressed
+
+## What can we do about it?
+
+#### Parquet files
+
+-   We are moving from row based storage **to column based**
+
+-   About 50x faster than a .csv
+
+-   It groups our data.
+
+    -   For example a row group size of 2, puts rows all the data from 1 and 2 next to each other **then** we have 3! = GROUPS or PARTITION
+
+    -   If we have large data this means we can skip groups we don't need
+
+![](img/parquet-logo.png){fig-align="center" width="187"}
+
+## 
+
+[![Demystifying the Parquet File Format](img/storage.png){fig-align="center" width="2000"}](https://towardsdatascience.com/demystifying-the-parquet-file-format-13adb0206705)
+
+## 
+
+[![New York City Taxi and Limousine Commission (TLC) all records from Yellow and Green Cabs](img/cab_data.png){fig-align="center" width="75%"}](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.pag)
+
+## Concepts
+
+-   You may come across **Arrow** - this is an in-memory format, **Parquet** is a storage format
+
+ 
+
+-   In the R for Data Science book a 9BG `.csv` is queried in
+
+    -   11 seconds for standard code
+    -   0.063 seconds using a parquet file! 100x faster
+
+## We can go faster!
+
+<br/>
+
+![](img/duck.jpg){fig-align="center" width="50%"}
+
+## DuckDB
+
+-   Database management system
+
+-   Columnar data
+
+-   No installation
+
+-   Convert our Parquet file to DuckDB and back again!
+
+```{r, eval=FALSE}
+to_duckdb() 
+to_arrow()
+```
+
+> Regarding performance, parquet is 717 times faster than the same query on a csv file, and duckdb is 2808 times faster.
+
+::: {style="font-size: 60%;"}
+Source: [Christophe Nicault](https://www.christophenicault.com/post/large_dataframe_arrow_duckdb/)
+:::
+
+## Notes
+
+-   All (parquet and DuckDB) make sure of `dplyr` ! `select()`, `filter()`, `groupby()` = direct integration with R
+
+-   Currently the **support for spatial data** is very limited
+
+-   [sfarrow](https://wcjochem.github.io/sfarrow/articles/example_sfarrow.html) - can load and query the data but can't do any analysis!
+
+## Postgres
+
+![](img/Postgresql_elephant.svg.png){height="300px" fig-align="center"}
+
+## Postgres = object-relational database
+
+[![DVD Rental Model](img/dvd-rental-sample-database-diagram.png){fig-align="center" width="38%"}](https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/)
+
+## PostgreSQL has a PostGIS extention {.center}
+
+## This allows the "geometry" column and spatial quieres {auto-animate="true"}
+
+#### Making random points in polygons
+
+![](img/random_points.png){fig-align="center" width="28%"}
+
+5 million random points
+
+-   QGIS = 226 seconds
+-   PostGIS = 18 seconds
+
+::: {style="font-size: 60%;"}
+Source: [Why should you care about PostGIS? --- A gentle introduction to spatial databases](https://medium.com/@tjukanov/why-should-you-care-about-postgis-a-gentle-introduction-to-spatial-databases-9eccd26bc42b)
+:::
+
+## PostGIS
+
+<br/>
+
+![](img/PostGIS_logo.png){height="300px" fig-align="center"}
+
+## Starting
+
+-   Despite all these tools we must start with the basics.
+
+-   Often this is in Quantum GIS (free) or ArcMap(\$)
+
+![](img/QGIS.png){fig-align="center" width="558"}
+
+
+## Conclusion
+
+-   It is essential to use data to inform decisions...BUT we must develop a **critical awareness** of:
+
+    -   How the data has been created
+    -   How the boundary data has been created
+    -   What **the agenda** was for collecting the data
+
+-   Almost any data can be spatial
+
+-   We must recognize that:
+
+    -   Data is a **snapshot / sample** of the population
+    -   Analysis attempts to **model the world** - it is *never* perfect.
+
+> Scientists must have a say in the future of cities, McPhearson 2016

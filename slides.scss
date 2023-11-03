@@ -1,0 +1,122 @@
+/*-- scss:defaults --*/
+
+// https://quarto.org/docs/presentations/revealjs/themes.html#sass-variables 
+
+// fonts
+
+
+@import url('https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+$font-family-monospace: "Muli", monospace !default;
+$font-family-sans-serif: "Muli", sans-serif !default;
+$font-family-serif: "Muli" !default;
+$font-family-cursive: "Muli", cursive;
+$presentation-heading-font: $font-family-sans-serif !default;
+$blockquote-font: "Muli";
+$table-font: "Source Sans Pro", "Amatic SC", sans-serif !default;
+$font-family-base: $font-family-serif !default;
+$mainfont: $font-family-serif !default;
+
+// headings
+$presentation-heading-text-transform: none;
+$presentation-heading-color: rgb(78,60,86) !default;
+$presentation-heading-font-weight: 700 !default;
+
+// body
+$presentation-font-size-root: 33px !default;
+$presentation-line-height: 1.15 !default;
+$presentation-h1-font-size: 1.9em !default;
+$presentation-h2-font-size: 1.65em !default;
+$presentation-h3-font-size: 1.4em !default;
+$code-block-font-size: .92em !default;
+
+// colors
+$body-bg: #fff;
+$body-color: #000;
+$link-color: #6b9e9b; //#e38119;
+$full-casa : rgb(78,60,86);
+$fade-casa : #9e6b88;
+$comp-casa : #6b9e9b;
+
+// code blocks
+$code-block-border: none;
+$code-block-border-left: $fade-casa !default;
+$code-block-border-left-style: dotted;
+$code-block-border-left-width: 5px;
+
+/*-- scss:mixin --*/
+
+.reveal code {
+    font-size: .92em;
+}
+
+.reveal p, .reveal p i, .reveal p b {
+    font-family: $font-family-serif;
+    line-height: 1.25em;
+}
+
+.reveal ol li, .reveal ul li {
+    font-family: $font-family-serif;
+    line-height: 1.25em;
+}
+
+// https://www.w3docs.com/snippets/css/how-to-vertically-center-text-with-css.html#example-of-vertically-aligning-a-text-with-flexbox-11
+.reveal .slide blockquote p {
+    position: relative;
+    font-family: $blockquote-font;
+    font-size: normal;
+    line-height: 1.5em;
+    display: flex;
+    align-items: center; // stretch?
+    justify-content: center;
+    color: $full-casa;
+    //background-color: $fade-casa;
+    padding: 0.5em;
+    //padding-left: 2em;
+    //padding-right: 2em
+    //top: 1em;
+    //left: 1em;
+    //margin-top: 5em; //450px;
+    //margin-left: 2em; //250px;
+    //margin-bottom: 2em;
+}
+
+.reveal .h2 {
+    margin-bottom: 30px;
+}
+
+.reveal table thead {
+    font-family: $table-font;
+    font-weight: 300;
+}
+
+.reveal table td, {
+    font-family: $table-font;
+    font-weight: 100;
+}
+
+.reveal .csl-entry {
+    font-family: $font-family-serif;
+    font-size: smaller;
+}
+
+/*-- scss:rules --*/
+
+.reveal .sourceCode {
+    border-style: none;
+    border-left-style: dotted 5px $fade-casa;
+}
+
+// Fix links so they are not cut off
+.reveal a {
+    line-height: 1.3em;
+}
+
+.center-xy {
+          margin: 0;
+          position: absolute;
+          left: 50%;
+          -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+        }

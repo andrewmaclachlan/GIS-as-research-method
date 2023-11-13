@@ -266,6 +266,13 @@
     "text": "How smart are cities?"
   },
   {
+    "objectID": "GIS_as_research_method.html#gis-applications",
+    "href": "GIS_as_research_method.html#gis-applications",
+    "title": "GIS as a research method",
+    "section": "GIS applications",
+    "text": "GIS applications\nGIS can be applied to any field as long as there is some spatial data:\n\nHealth\nAgriculture\nSustainability\nForestry…\nParticipatory GIS\nMonitoring (social, economic, resource) changes\nEnvironmental management / environmental impact assessments\n\ne.g. wind turbine?"
+  },
+  {
     "objectID": "GIS_as_research_method.html#vague-concepts",
     "href": "GIS_as_research_method.html#vague-concepts",
     "title": "GIS as a research method",
@@ -319,7 +326,7 @@
     "href": "GIS_as_research_method.html#quantifying-spatial-patterns",
     "title": "GIS as a research method",
     "section": "Quantifying Spatial Patterns",
-    "text": "Quantifying Spatial Patterns\n\nWhat is fixed?\n\n\nPoint Pattern Analysis\n\nProperties are fixed (e.g. binary - present or not)\nDiscrete objects - present or not, binary, yes or no.\nExamples: fly tipping, stop and search, blue plaques, pharmacies\n\nProperties fixed, but space (location - x,y) can vary\n\n\nSpatial Autocorrelation\n\nSpace (e.g. the location of the spatial units - wards, boroughs etc) is fixed\nThe values of the spatial units vary\nWhere the values are similar we say they exhibit Spatial Autocorrelation\n\nSpace is fixed, but properties (values) can vary"
+    "text": "Quantifying Spatial Patterns\nWhat is fixed?\n\nPoint Pattern Analysis\n\nProperties are fixed (e.g. binary - present or not)\nDiscrete objects - present or not, binary, yes or no.\nExamples: fly tipping, stop and search, blue plaques, pharmacies\n\nProperties fixed, but space (location - x,y) can vary\n\n\nSpatial Autocorrelation\n\nSpace (e.g. the location of the spatial units - wards, boroughs etc) is fixed\nThe values of the spatial units vary\nWhere the values are similar we say they exhibit Spatial Autocorrelation\n\nSpace is fixed, but properties (values) can vary"
   },
   {
     "objectID": "GIS_as_research_method.html#examples",
@@ -340,7 +347,14 @@
     "href": "GIS_as_research_method.html#spatial-modelling",
     "title": "GIS as a research method",
     "section": "Spatial modelling",
-    "text": "Spatial modelling\n\nWhat are the factors that might lead to variation in Average GCSE point scores across the city?\n\n\n\n\n\n\n\n\nDependent variable labelled y\nResiduals are the dots not on line\n\\(y_i = \\beta_0 + \\beta_1x_i + \\epsilon_i\\)\n\n\n\n\n\\(\\beta_0\\) is the intercept (the value of \\(y\\) when \\(x = 0\\) - somewhere around 370 on the graph above);\n\\(\\beta_1\\) is sometimes referred to as the ‘slope’ parameter and is simply the change in the value of \\(y\\) for a 1 unit change in the value of \\(x\\) (the slope of the blue line) - around -40.\n\\(\\epsilon_i\\) is a random error term sums 0 - add all of the vertical differences between the blue line and all of the residuals"
+    "text": "Spatial modelling\nWhat are the factors that might lead to variation in Average GCSE point scores across the city?"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#spatial-modelling-1",
+    "href": "GIS_as_research_method.html#spatial-modelling-1",
+    "title": "GIS as a research method",
+    "section": "Spatial modelling",
+    "text": "Spatial modelling\nWhat are the factors that might lead to variation in Average GCSE point scores across the city?\n\n\nDependent variable labelled y\nResiduals are the dots not on line\n\\(y_i = \\beta_0 + \\beta_1x_i + \\epsilon_i\\)\n\\(\\beta_0\\) is the intercept (the value of \\(y\\) when \\(x = 0\\) - somewhere around 370 on the graph above);\n\n\n\n\n\\(\\beta_1\\) is sometimes referred to as the ‘slope’ parameter and is simply the change in the value of \\(y\\) for a 1 unit change in the value of \\(x\\) (the slope of the blue line) - around -40.\n\\(\\epsilon_i\\) is a random error term sums 0 - add all of the vertical differences between the blue line and all of the residuals"
   },
   {
     "objectID": "GIS_as_research_method.html#spatial-regression",
@@ -354,14 +368,14 @@
     "href": "GIS_as_research_method.html#spatial-regression-1",
     "title": "GIS as a research method",
     "section": "Spatial regression",
-    "text": "Spatial regression\n\nAt this point we have several options\n\nGlobal - single regression models\n\nlag model - we can include the value of neighboring GCSE values in the model\nerror model - we treat the errors as a nuisance but we must account for them.\n\nLocal model\n\nGeographically weighted regression - we do lots of local regression models and get coefficients that vary over the study area.\nMachine Learning versions = geographically weighted random forests…"
+    "text": "Spatial regression\nAt this point we have several options…\nGlobal - single regression models\n\nlag model - we can include the value of neighboring GCSE values in the model\nerror model - we treat the errors as a nuisance but we must account for them.\n\nLocal model\n\nGeographically weighted regression - we do lots of local regression models and get coefficients that vary over the study area.\nMachine Learning versions = geographically weighted random forests…"
   },
   {
     "objectID": "GIS_as_research_method.html#networks-location-allocation",
     "href": "GIS_as_research_method.html#networks-location-allocation",
     "title": "GIS as a research method",
     "section": "Networks / location allocation",
-    "text": "Networks / location allocation\nQuestion: You are in charge of a supermarket chain and you want to open a new store\nQuestion: You work for a delivery company and want to locate a warehouse\nQuestion: In the event of an emergency call, where is the nearest fire station / ambulance / police car?"
+    "text": "Networks / location allocation\nYou are in charge of a supermarket chain and you want to open a new store\nYou work for a delivery company and want to locate a warehouse\nIn the event of an emergency call, where is the nearest fire station / ambulance / police car?"
   },
   {
     "objectID": "GIS_as_research_method.html#networks-location-allocation-1",
@@ -406,11 +420,25 @@
     "text": "Cost distance analysis"
   },
   {
-    "objectID": "GIS_as_research_method.html#earth-observation",
-    "href": "GIS_as_research_method.html#earth-observation",
+    "objectID": "GIS_as_research_method.html#earth-observation-1",
+    "href": "GIS_as_research_method.html#earth-observation-1",
     "title": "GIS as a research method",
-    "section": "Earth Observation",
-    "text": "Earth Observation\nFremantle Woolstore, Western Australia"
+    "section": "Earth Observation 1",
+    "text": "Earth Observation 1\n\n\nLeonardo Brito became chief of police at the Police Specialized in Crimes Against the Environment (DEMA) in Brazil’s Amapá stated, he noticed that the department hardly ever investigated environmental crimes\n2 employees, two vehicles, a boat and a drone, which collects only 20 minutes of footage at a time, to patrol an area of forest the size of Nepal."
+  },
+  {
+    "objectID": "GIS_as_research_method.html#earth-observation-1-1",
+    "href": "GIS_as_research_method.html#earth-observation-1-1",
+    "title": "GIS as a research method",
+    "section": "Earth Observation 1",
+    "text": "Earth Observation 1\n\nBrito said that since they starting using the app, Amapá’s environmental police have been able to detect 5,000 areas of deforestation in the state, both legal and illegal. He adds that every day he sees new locations to add to the ever-growing list.\n\nTrying to clear small patches to avoid detection!"
+  },
+  {
+    "objectID": "GIS_as_research_method.html#earth-observation-2",
+    "href": "GIS_as_research_method.html#earth-observation-2",
+    "title": "GIS as a research method",
+    "section": "Earth Observation 2",
+    "text": "Earth Observation 2\nFremantle Woolstore, Western Australia"
   },
   {
     "objectID": "GIS_as_research_method.html#an-example.uhi",

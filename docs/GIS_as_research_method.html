@@ -931,6 +931,22 @@
 </iframe>
 </p>
 </section>
+<section id="gis-applications" class="slide level2">
+<h2>GIS applications</h2>
+<p>GIS can be applied to any field as long as there is some spatial data:</p>
+<ul>
+<li><p>Health</p></li>
+<li><p>Agriculture</p></li>
+<li><p>Sustainability</p></li>
+<li><p>Forestry…</p></li>
+<li><p>Participatory GIS</p></li>
+<li><p>Monitoring (social, economic, resource) changes</p></li>
+<li><p>Environmental management / environmental impact assessments</p>
+<ul>
+<li>e.g.&nbsp;wind turbine?</li>
+</ul></li>
+</ul>
+</section>
 <section id="vague-concepts" class="slide level2">
 <h2>Vague concepts?</h2>
 <p>What is a forest? Conceptual vagueness of geographic concepts. Bennett(2001)</p>
@@ -965,9 +981,9 @@
 <p><br></p>
 <h4 id="points">Points</h4>
 <p>Are these points distributed in a random way or is there some sort of pattern (uniform or clustered)?</p>
-<ul>
-<li class="fragment">We should expect randomness but randomness conforms to known probability distributions</li>
-</ul>
+<blockquote>
+<p>We should expect randomness but randomness conforms to known probability distributions</p>
+</blockquote>
 <p><br></p>
 <h4 id="spatially-continuous-observations-e.g.-values-of-polygons">Spatially continuous observations (e.g.&nbsp;values of polygons)</h4>
 <p>How (dis)similar are our values assigned to geographic units across geographic space</p>
@@ -976,7 +992,7 @@
 <h2>What patterns show</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/cholera.png" style="width:60.0%"></p>
+<p><img data-src="img/cholera.png" style="width:55.0%"></p>
 </figure>
 </div>
 <div style="font-size: 60%;">
@@ -1009,17 +1025,15 @@
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/Lorant.png" style="width:70.0%"></p>
+<p><img data-src="img/Lorant.png" style="width:55.0%"></p>
 </figure>
 </div>
 </section>
 <section id="quantifying-spatial-patterns" class="slide level2">
 <h2>Quantifying Spatial Patterns</h2>
-<p><br></p>
 <p>What is fixed?</p>
-<p><br></p>
 <div class="column" style="width:49%;">
-<h3 id="point-pattern-analysis">Point Pattern Analysis</h3>
+<p><strong>Point Pattern Analysis</strong></p>
 <ul>
 <li>Properties are fixed (e.g.&nbsp;binary - present or not)</li>
 <li>Discrete objects - present or not, binary, yes or no.</li>
@@ -1028,7 +1042,7 @@
 <p>Properties fixed, but <strong>space (location - x,y)</strong> can vary</p>
 </div>
 <div class="column" style="width:49%;">
-<h3 id="spatial-autocorrelation">Spatial Autocorrelation</h3>
+<p><strong>Spatial Autocorrelation</strong></p>
 <ul>
 <li>Space (e.g.&nbsp;the location of the spatial units - wards, boroughs etc) is fixed</li>
 <li>The values of the spatial units vary</li>
@@ -1045,7 +1059,7 @@
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/pharmacies.png" style="width:70.0%"></p>
+<p><img data-src="img/pharmacies.png" style="width:60.0%"></p>
 </figure>
 </div>
 </section>
@@ -1062,24 +1076,26 @@
 </section>
 <section id="spatial-modelling" class="slide level2">
 <h2>Spatial modelling</h2>
-<blockquote>
 <p>What are the factors that might lead to variation in Average GCSE point scores across the city?</p>
-</blockquote>
-<div class="column" style="width:49%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/GCSE_absence.png" style="width:100.0%"></p>
+<p><img data-src="img/GCSE_absence.png" style="width:60.0%"></p>
 </figure>
 </div>
+</section>
+<section id="spatial-modelling-1" class="slide level2">
+<h2>Spatial modelling</h2>
+<p>What are the factors that might lead to variation in Average GCSE point scores across the city?</p>
+<div class="column" style="width:49%;">
 <ul>
-<li>Dependent variable labelled y</li>
-<li>Residuals are the dots not on line</li>
-<li><span class="math inline">\(y_i = \beta_0 + \beta_1x_i + \epsilon_i\)</span></li>
+<li><p>Dependent variable labelled y</p></li>
+<li><p>Residuals are the dots not on line</p></li>
+<li><p><span class="math inline">\(y_i = \beta_0 + \beta_1x_i + \epsilon_i\)</span></p></li>
+<li><p><span class="math inline">\(\beta_0\)</span> is the intercept (the value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x = 0\)</span> - somewhere around 370 on the graph above);</p></li>
 </ul>
 </div>
 <div class="column" style="width:49%;">
 <ul>
-<li><p><span class="math inline">\(\beta_0\)</span> is the intercept (the value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x = 0\)</span> - somewhere around 370 on the graph above);</p></li>
 <li><p><span class="math inline">\(\beta_1\)</span> is sometimes referred to as the ‘slope’ parameter and is simply the change in the value of <span class="math inline">\(y\)</span> for a 1 unit change in the value of <span class="math inline">\(x\)</span> (the slope of the blue line) - around -40.</p></li>
 <li><p><span class="math inline">\(\epsilon_i\)</span> is a random error term sums 0 - add all of the vertical differences between the blue line and all of the residuals</p></li>
 </ul>
@@ -1093,15 +1109,13 @@
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/model_errors.png" style="width:70.0%"></p>
+<p><img data-src="img/model_errors.png" style="width:50.0%"></p>
 </figure>
 </div>
 </section>
 <section id="spatial-regression-1" class="slide level2">
 <h2>Spatial regression</h2>
-<ul>
-<li>At this point we have several options</li>
-</ul>
+<p>At this point we have several options…</p>
 <p><strong>Global - single regression models</strong></p>
 <ol type="1">
 <li><p>lag model - we can include the value of neighboring GCSE values in the model</p></li>
@@ -1115,12 +1129,12 @@
 </section>
 <section id="networks-location-allocation" class="slide level2">
 <h2>Networks / location allocation</h2>
-<p>Question: You are in charge of a supermarket chain and you want to open a new store</p>
-<p>Question: You work for a delivery company and want to locate a warehouse</p>
-<p>Question: In the event of an emergency call, where is the nearest fire station / ambulance / police car?</p>
+<p>You are in charge of a supermarket chain and you want to open a new store</p>
+<p>You work for a delivery company and want to locate a warehouse</p>
+<p>In the event of an emergency call, where is the nearest fire station / ambulance / police car?</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/location_allocation.png" style="width:55.0%"></p>
+<p><img data-src="img/location_allocation.png" style="width:40.0%"></p>
 </figure>
 </div>
 </section>
@@ -1179,7 +1193,7 @@
 <section id="cost-distance-analysis" class="slide level2">
 <h2>Cost distance analysis</h2>
 <p>Not all countries (e.g.&nbsp;developing countries) will have data on transport, networks and facilities.</p>
-<p>Question: The World Bank wanted to determine how many people in rural Tanzania had access to a water point within 30 minutes.</p>
+<p><strong>Question:</strong> The World Bank wanted to determine how many people in rural Tanzania had access to a water point within 30 minutes.</p>
 <p>Data:</p>
 <ul>
 <li>Landcover from Global Human Settlement</li>
@@ -1206,8 +1220,36 @@
 </div>
 </div>
 </section>
-<section id="earth-observation" class="slide level2">
-<h2>Earth Observation</h2>
+<section id="earth-observation-1" class="slide level2">
+<h2>Earth Observation 1</h2>
+<div class="column" style="width:49%;">
+<ul>
+<li><p>Leonardo Brito became chief of police at the Police Specialized in Crimes Against the Environment (DEMA) in Brazil’s Amapá stated, he noticed that the department hardly ever investigated environmental crimes</p></li>
+<li><p>2 employees, two vehicles, a boat and a drone, which collects only 20 minutes of footage at a time, to patrol an area of forest the size of Nepal.</p></li>
+</ul>
+</div>
+<div class="column" style="width:49%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/Environmental-chief-police-Dema-Amapá-Leonardo-Brito.-Image-by-Dema-AP-1.jpg" width="381"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="earth-observation-1-1" class="slide level2">
+<h2>Earth Observation 1</h2>
+<blockquote>
+<p>Brito said that since they starting using the app, Amapá’s environmental police have been able to detect 5,000 areas of deforestation in the state, both legal and illegal. He adds that every day he sees new locations to add to the ever-growing list.</p>
+</blockquote>
+<p><strong>Trying to clear small patches to avoid detection!</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/drone02.png" width="381"></p>
+</figure>
+</div>
+</section>
+<section id="earth-observation-2" class="slide level2">
+<h2>Earth Observation 2</h2>
 <h4 id="fremantle-woolstore-western-australia">Fremantle Woolstore, Western Australia</h4>
 <div class="columns">
 <div class="column" style="width:49%;">
@@ -1251,7 +1293,7 @@
 <h2>Models</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/UHI_image_model.jpg" style="width:60.0%"></p>
+<p><img data-src="img/UHI_image_model.jpg" style="width:50.0%"></p>
 </figure>
 </div>
 </section>

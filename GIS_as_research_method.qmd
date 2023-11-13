@@ -477,6 +477,27 @@ Source: [Smart Cities, European Comission](https://commission.europa.eu/eu-regio
 
 </p>
 
+## GIS applications
+
+GIS can be applied to any field as long as there is some spatial data:
+
+* Health
+
+* Agriculture 
+
+* Sustainability 
+
+* Forestry...
+
+* Participatory GIS
+
+* Monitoring (social, economic, resource) changes
+
+* Environmental management / environmental impact assessments 
+  * e.g. wind turbine? 
+  
+
+
 ## Vague concepts?
 
 What is a forest? Conceptual vagueness of geographic concepts. 
@@ -506,7 +527,7 @@ Bennett(2001)
 
 Are these points distributed in a random way or is there some sort of pattern (uniform or clustered)?
 
->   * We should expect randomness but randomness conforms to known probability distributions
+>  We should expect randomness but randomness conforms to known probability distributions
 
 </br>
 
@@ -517,7 +538,7 @@ How (dis)similar are our values assigned to geographic units across geographic s
 
 ## What patterns show
 
-![](img/cholera.png){fig-align="center" width="60%"}
+![](img/cholera.png){fig-align="center" width="55%"}
 
 
 ::: {style="font-size: 60%;"}
@@ -546,19 +567,17 @@ Something in the water: the mythology of Snow’s map of cholera. Source:[Kennet
 * Some sort of spatial influence
 * Note the difference between spatially continuous and point data
 
-![](img/Lorant.png){fig-align="center" width="70%"}
+![](img/Lorant.png){fig-align="center" width="55%"}
 
 ## Quantifying Spatial Patterns
 
-</br>
 
 What is fixed?
 
-</br>
 
 ::: {.column width="49%"}
 
-### Point Pattern Analysis
+**Point Pattern Analysis**
 
 * Properties are fixed (e.g. binary - present or not)
 * Discrete objects - present or not, binary, yes or no.
@@ -569,7 +588,7 @@ Properties fixed, but **space (location - x,y)** can vary
 
 ::: {.column width="49%"}
 
-### Spatial Autocorrelation
+**Spatial Autocorrelation**
 
 * Space (e.g. the location of the spatial units - wards, boroughs etc) is fixed
 * The values of the spatial units vary
@@ -584,7 +603,7 @@ Space is fixed, but **properties (values)** can vary
 
 * If we identify clusters what are the socio-economic characteristics ?
 
-![](img/pharmacies.png){fig-align="center" width="70%"}
+![](img/pharmacies.png){fig-align="center" width="60%"}
 
 ## Examples
 
@@ -594,22 +613,29 @@ Space is fixed, but **properties (values)** can vary
 
 ## Spatial modelling
 
-> What are the factors that might lead to variation in Average GCSE point scores across the city?
+What are the factors that might lead to variation in Average GCSE point scores across the city?
+
+
+![](img/GCSE_absence.png){fig-align="center" width="60%"}
+
+
+## Spatial modelling
+
+What are the factors that might lead to variation in Average GCSE point scores across the city?
 
 ::: {.column width="49%"}
-
-
-![](img/GCSE_absence.png){fig-align="center" width="100%"}
 
 * Dependent variable labelled y
 * Residuals are the dots not on line 
 * $y_i = \beta_0 + \beta_1x_i + \epsilon_i$
 
+* $\beta_0$ is the intercept (the value of $y$ when $x = 0$ - somewhere around 370 on the graph above); 
+
+
 :::
 
 ::: {.column width="49%"}
   
-* $\beta_0$ is the intercept (the value of $y$ when $x = 0$ - somewhere around 370 on the graph above); 
 
 * $\beta_1$ is sometimes referred to as the 'slope' parameter and is simply the change in the value of $y$ for a 1 unit change in the value of $x$ (the slope of the blue line) - around -40.
 
@@ -624,11 +650,11 @@ Space is fixed, but **properties (values)** can vary
 * In our model the residuals (observed-predicted) should show no pattern (or autocorrleation)...in other words they should be random!
 
 
-![](img/model_errors.png){fig-align="center" width="70%"}
+![](img/model_errors.png){fig-align="center" width="50%"}
 
 ## Spatial regression
 
-* At this point we have several options
+At this point we have several options...
 
 **Global - single regression models**
 
@@ -644,13 +670,13 @@ Space is fixed, but **properties (values)** can vary
 
 ## Networks / location allocation 
 
-Question: You are in charge of a supermarket chain and you want to open a new store
+You are in charge of a supermarket chain and you want to open a new store
 
-Question: You work for a delivery company and want to locate a warehouse
+You work for a delivery company and want to locate a warehouse
 
-Question: In the event of an emergency call, where is the nearest fire station / ambulance / police car?
+In the event of an emergency call, where is the nearest fire station / ambulance / police car?
 
-![](img/location_allocation.png){fig-align="center" width="55%"}
+![](img/location_allocation.png){fig-align="center" width="40%"}
 
 ## Networks / location allocation 
 
@@ -701,7 +727,7 @@ R5R example. Source:[Duncan Smith](https://citygeographics.org/r5r-workshop/)
 
 Not all countries (e.g. developing countries) will have data on transport, networks and facilities.
 
-Question: The World Bank wanted to determine how many people in rural Tanzania had access to a water point within 30 minutes. 
+**Question:** The World Bank wanted to determine how many people in rural Tanzania had access to a water point within 30 minutes. 
 
 Data:
 
@@ -725,7 +751,37 @@ Data:
 :::
 
 
-## Earth Observation
+## Earth Observation 1
+
+::: {.column width="49%"}
+
+* Leonardo Brito became chief of police at the Police Specialized in Crimes Against the Environment (DEMA) in Brazil’s Amapá stated, he noticed that the department hardly ever investigated environmental crimes
+
+* 2 employees, two vehicles, a boat and a drone, which collects only 20 minutes of footage at a time, to patrol an area of forest the size of Nepal.
+
+:::
+
+::: {.column width="49%"}
+
+![](img/Environmental-chief-police-Dema-Amapá-Leonardo-Brito.-Image-by-Dema-AP-1.jpg){fig-align="center" width="381"}
+
+::: 
+
+## Earth Observation 1
+
+> Brito said that since they starting using the app, Amapá’s environmental police have been able to detect 5,000 areas of deforestation in the state, both legal and illegal. He adds that every day he sees new locations to add to the ever-growing list.
+
+
+
+
+**Trying to clear small patches to avoid detection!**
+
+
+![](img/drone02.png){fig-align="center" width="381"}
+
+
+## Earth Observation 2
+
 
 #### Fremantle Woolstore, Western Australia
 
@@ -754,7 +810,7 @@ Data:
 
 ## Models
 
-![](img/UHI_image_model.jpg){fig-align="center" width="60%"}
+![](img/UHI_image_model.jpg){fig-align="center" width="50%"}
 
 
 ## Scenarios
